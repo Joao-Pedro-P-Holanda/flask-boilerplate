@@ -1,0 +1,7 @@
+# IDE files
+.vscode
+
+# enviroment
+__pycache__
+.env
+.pytest_cache
