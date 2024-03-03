@@ -4,4 +4,8 @@
 # enviroment
 __pycache__
 .env
+
+# testing
+.coverage
+/htmlcov
 .pytest_cache
