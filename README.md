@@ -53,8 +53,8 @@ pip install -r dev_requirements.txt
 
 ## TODO
 
-- [ ] Containerize the application
-- [ ] Set up dependabot
+- [x] Containerize the application
+- [x] Set up dependabot
 - [ ] Create actions workflow for migrations
 - [ ] Configure logging
 - [ ] Style the hello page
