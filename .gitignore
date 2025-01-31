@@ -4,6 +4,7 @@
 # enviroment
 __pycache__
 .env
+.python-version
 
 # testing
 .coverage
