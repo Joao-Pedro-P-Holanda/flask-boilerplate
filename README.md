@@ -1,4 +1,6 @@
 # Schema migration with Flask
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FJoao-Pedro-P-Holanda%2Fflask-boilerplate.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FJoao-Pedro-P-Holanda%2Fflask-boilerplate?ref=badge_shield)
+
 
 This template workspace gives the project structure to setup a flask web application, using SQLAlchemy, Flask-Migrate, Flask-Marshmallow and Pytest.
 
@@ -58,3 +60,7 @@ pip install -r dev_requirements.txt
 - [ ] Create actions workflow for migrations
 - [ ] Configure logging
 - [ ] Style the hello page
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FJoao-Pedro-P-Holanda%2Fflask-boilerplate.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FJoao-Pedro-P-Holanda%2Fflask-boilerplate?ref=badge_large)
