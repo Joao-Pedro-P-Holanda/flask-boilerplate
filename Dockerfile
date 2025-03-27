@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-ARG PYTHON_VERSION=3.11.5
+ARG PYTHON_VERSION=3.13.2
 FROM python:${PYTHON_VERSION}-alpine as base
 
 # Prevents Python from writing pyc files.
@@ -10,7 +10,6 @@ ENV PYTHONDONTWRITEBYTECODE=1
 # the application crashes without emitting any logs due to buffering.
 ENV PYTHONUNBUFFERED=1
 ENV FLASK_APP="app"
-ENV DATABASE_URI="sqlite:///sample.db"
 
 WORKDIR /app
 
@@ -32,4 +31,4 @@ RUN flask db upgrade
 EXPOSE 8000
 
 # Run the application on the production server.
-CMD gunicorn -w 4 -b 0.0.0.0 'app:create_app()'
+ENTRYPOINT gunicorn -w 4 -b 0.0.0.0 'app:create_app()'
