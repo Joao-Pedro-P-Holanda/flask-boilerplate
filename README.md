@@ -27,27 +27,31 @@ Lastly. the html that is rendered on the starting route is included in the
 
 ## Configure Development Workspace
 
-### 1. Set the `DATABASE_URI` environment variable
+1. Set the `DATABASE_URI` environment variable
 
-- #### Linux
+- **Linux**
 
 ```shell
 export DATABASE_URI="your_database_uri_here"
 ```
 
-- #### Windows
+- **Windows**
 
 ```cmd
 setx DATABASE_URI="your_database_uri_here"
 ```
 
-### Install dev_requirements
+2. Install dev_requirements
 
 ```shell
 pip install -r dev_requirements.txt
 ```
 
-### Run the app
+3. Upgrade the database to latest migration
+
+`flask db upgrade`
+
+4. Run the app
 
 `flask run --debug`
 

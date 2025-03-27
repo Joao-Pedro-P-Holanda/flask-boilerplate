@@ -26,27 +26,31 @@ Por fim, o HTML que é renderizado na rota inicial está incluído na pasta temp
 
 ## Configurar o projeto
 
-### 1. Definir a variável de ambiente `DATABASE_URI`
+1. Definir a variável de ambiente `DATABASE_URI`
 
-- #### Linux
+- **Linux**
 
 ```shell
 export DATABASE_URI="uri_do_banco"
 ```
 
-- #### Windows
+- **Windows**
 
 ```cmd
 setx DATABASE_URI="uri_do_banco"
 ```
 
-### Instalar dependências
+2. Instalar dependências
 
 ```shell
 pip install -r dev_requirements.txt
 ```
 
-### Inicializar a aplicação em modo de desenvolvimento
+3. Atualizar o banco para a última migração
+
+`flask db upgrade`
+
+4. Inicializar a aplicação em modo de desenvolvimento
 
 `flask run --debug`
 
