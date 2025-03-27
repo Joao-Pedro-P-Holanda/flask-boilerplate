@@ -2,7 +2,6 @@ from flask import Flask, current_app, jsonify
 from flask_migrate import Migrate
 from .models import config_db
 from .serializer import config_ma
-from .hello_world import hello_world_bp
 from .blueprints.hello_world import hello_world_bp
 from dotenv import load_dotenv
 import os
