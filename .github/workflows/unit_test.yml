@@ -19,6 +19,7 @@ jobs:
     env:
       UV_PYTHON: ${{ matrix.python-version }}
       DATABASE_URI: "sqlite:///test.db"
+      SECRET_KEY: ${{ secrets.SECRET_KEY }}
     steps:
     - uses: actions/checkout@v4
 
