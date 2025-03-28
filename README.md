@@ -27,18 +27,37 @@ Lastly. the html that is rendered on the starting route is included in the
 
 ## Configure Development Workspace
 
-1. Set the `DATABASE_URI` environment variable
+1. Set the environment variables
+
+You can either add all your variables in a `.env` file or export them in a single terminal session.
+
+You can create a secret key with the following command:
+
+```console
+ openssl rand -hex 64
+```
+
+Then write on the .env file:
+
+```.env
+DATABASE_URI="<your_database_uri_here>"
+SECRET_KEY="<your_secret_key>"
+```
+
+Or export on the terminal session:
 
 - **Linux**
 
 ```shell
-export DATABASE_URI="your_database_uri_here"
+export DATABASE_URI="<your_database_uri_here>"
+export SECRET_KEY="<your_secret_key>"
 ```
 
 - **Windows**
 
 ```cmd
-setx DATABASE_URI="your_database_uri_here"
+setx DATABASE_URI="<your_database_uri_here>"
+setx SECRET_KEY="<your_secret_key>"
 ```
 
 2. Install dev_requirements
@@ -51,14 +70,24 @@ pip install -r dev_requirements.txt
 
 `flask db upgrade`
 
-4. Run the app
+4. Configure your self-signed ssl certificate for the development environment
 
-`flask run --debug`
+To create a self signed certificate you can execute this openssl command:
+
+```shell
+openssl req -x509 -newkey rsa:4096 -nodes -out cert.pem -keyout key.pem -days 365 
+```
+
+You can answer the questions made with . (blank) or any value you prefer, it will be used only on development.
+
+5. Run the app locally 
+
+`flask run --debug --cert cert.pem --key key.pem`
 
 ## TODO
 
 - [x] Containerize the application
 - [x] Set up dependabot
-- [ ] Create actions workflow for migrations
+- [ ] Configure docker compose with Nginx
 - [ ] Configure logging
 - [ ] Style the hello page
